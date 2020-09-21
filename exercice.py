@@ -3,24 +3,41 @@
 
 
 from typing import List
+import math
 
 
 def convert_to_absolute() -> float:
-    return 0.0
+    a = float(input('Nombre: '))
+    if a < 0 :
+        a = -a
+    return a
 
 
 def use_prefixes() -> List[str]:
-    prefixes, suffixes = 'JKLMNOP', 'ack'
-
-    return [""]
+    prefixes, suffixes, output = 'JKLMNOPQ', 'ack', []
+    for pre in prefixes :
+        output.append(f'{pre}{suffixes}')
+    return output
 
 
 def prime_integer_summation() -> int:
-    return 0
+    num, count, summation = 2, 0, 0
+    while count < 100 :
+        isPrime = True
+        for i in range(2, int(math.sqrt(num)) + 1) :
+            if(num % i == 0) : 
+                isPrime = False
+        if(isPrime) :
+            summation += num
+            count += 1
+        num += 1
+    return summation
 
 
 def factorial(number: int) -> int:
-    return 0
+    for i in range(1, number) :
+        number *= i
+    return number
 
 
 def use_continue() -> None:
